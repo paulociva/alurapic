@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Photo } from './photo';
-import { PhotoComment } from './photo-comment';
+import { PhotoComment } from '../photo-details/photo-comments/photo-comment';
 
 const API = 'http://localhost:3000';
 
@@ -42,5 +42,11 @@ export class PhotoService {
             API + '/photos/' + photoId + '/comments'
         );
 
+    }
+    addComment(photoId: number, commentText: string) {
+        return this.http.post(
+            API + '/photos/' + photoId + '/comments',
+            { commentText }
+        );
     }
 }
