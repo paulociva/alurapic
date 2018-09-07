@@ -15,19 +15,25 @@ const routes: Routes = [
             {
                 path: '',
                 component: SignInComponent,
+                data: {
+                    title: 'Sign In'
+                }
             },
             {
                 path: 'signup',
                 component: SignUpComponent,
+                data: {
+                    title: 'Sign Up'
+                }
             },
         ]
     },
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forChild(routes) 
+    imports: [
+        RouterModule.forChild(routes)
     ],
-    exports: [ RouterModule ]
+    exports: [RouterModule]
 })
 export class HomeRoutingModule { }
